@@ -10,7 +10,7 @@ class FileOpener {
 		std::ifstream in_file_{};
 	public:
 		FileOpener(){}
-		bool open(std::ifstream &in_file, const std::string &file_name);
+		bool OpenFile(std::ifstream &in_file, const std::string &file_name);
 };
 
 #endif

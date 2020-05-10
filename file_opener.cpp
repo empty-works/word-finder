@@ -1,7 +1,7 @@
 #include <iostream>
 #include "file_opener.h"
 
-bool open(std::ifstream &in_file, const std::string &file_name) {
+bool FileOpener::OpenFile(std::ifstream &in_file, const std::string &file_name) {
 	in_file.open(file_name);
 	bool is_valid{true};
 	if(!in_file) {
