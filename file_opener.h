@@ -3,13 +3,14 @@
 
 #include <iostream>
 #include <fstream>
+#include <string>
 
 class FileOpener {
 	private:
-		std::ifstream in_file{};
+		std::ifstream in_file_{};
 	public:
-		FileOpener(std::ifstream in_file) 
-			:in_file{in_file}{}
+		FileOpener(){}
+		bool open(std::ifstream &in_file, const std::string &file_name);
 };
 
 #endif
