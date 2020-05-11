@@ -9,11 +9,11 @@ class LineReader {
 	private:
 		int total_num_words_{0};
 		int num_matches_{0};
-		std::vector<std::string> words_vec_{};
 	public:
 		LineReader(){}
-		void ReadLines(std::ifstream in_file);
-		void FindWord(std::string line);
+		void ReadLines(std::ifstream &in_file);
+		std::vector<std::string> ParseLine(const std::string &line);
+		void FindWord(std::vector<std::string> words_vec);
 		void DisplayResults();
 		~LineReader(){}	
 };
