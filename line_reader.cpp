@@ -1,13 +1,18 @@
 #include "line_reader.h"
 #include <iostream>
 
-void LineReader::ReadLines(std::ifstream &in_file) {
+void LineReader::ShowResults(std::ifstream &in_file, std::string user_word) {
+		
+}
+
+void LineReader::ReadLines(std::ifstream &in_file, std::string user_word) {
 	std::string line;
 	while(std::getline(in_file, line)) {
-		std::vector<std::string> word_vec = ParseLine(line);
-		total_num_words_ += word_vec.size();
+		std::vector<std::string> words_vec = ParseLine(line);
+		total_num_words_ += words_vec.size();
+	 	FindWord(words_vec, user_word);
 	}
-	std::cout << "Total number of words: " << total_num_words_ << std::endl;
+
 }
 
 std::vector<std::string> LineReader::ParseLine(const std::string &line) {
@@ -22,4 +27,8 @@ std::vector<std::string> LineReader::ParseLine(const std::string &line) {
 	}
 	words_vec.push_back(line.substr(previous, current - previous));
 	return words_vec;	
+}
+
+void LineReader::FindWord(std::vector<std::string> words_vec, std::string user_word) {
+			
 }

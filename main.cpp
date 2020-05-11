@@ -18,7 +18,6 @@ int main() {
 	if(!is_valid) {return 1;}
 
 	std::unique_ptr<LineReader> lr_ptr = std::make_unique<LineReader>();
-	lr_ptr->ReadLines(in_file);	
 
 	in_file.close();
 
