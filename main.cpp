@@ -13,7 +13,10 @@ int main() {
 
 	std::ifstream in_file;
 	std::unique_ptr<FileOpener> fo_ptr = std::make_unique<FileOpener>();
-	fo_ptr->OpenFile(in_file, "romeojuliet.txt");		
+	bool is_valid = fo_ptr->OpenFile(in_file, "romeojuliet.txt");
+	if(!is_valid) {return 1;}
+	
+	std::cout << "File successfully opened." << std::endl;	
 
 	in_file.close();
 
