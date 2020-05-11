@@ -9,7 +9,7 @@ int main() {
 	
 	std::string user_word{};
 	
-	std::cout << "Search for: ";
+	std::cout << "Enter the substring to search for: ";
 	std::getline(std::cin, user_word);
 
 	std::ifstream in_file;
@@ -18,6 +18,7 @@ int main() {
 	if(!is_valid) {return 1;}
 
 	std::unique_ptr<LineReader> lr_ptr = std::make_unique<LineReader>();
+	lr_ptr->ShowResults(in_file, user_word);
 
 	in_file.close();
 

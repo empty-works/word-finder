@@ -2,7 +2,9 @@
 #include <iostream>
 
 void LineReader::ShowResults(std::ifstream &in_file, std::string user_word) {
-		
+	ReadLines(in_file, user_word);
+	std::cout << "Total number of words: " << total_num_words_ << std::endl;
+	std::cout << "The substring " << user_word << " was found " << num_matches_ << " times." << std::endl;
 }
 
 void LineReader::ReadLines(std::ifstream &in_file, std::string user_word) {
@@ -30,5 +32,8 @@ std::vector<std::string> LineReader::ParseLine(const std::string &line) {
 }
 
 void LineReader::FindWord(std::vector<std::string> words_vec, std::string user_word) {
-			
+	for(auto &word : words_vec) {
+		if(word == user_word)
+			num_matches_++;
+	}		
 }
